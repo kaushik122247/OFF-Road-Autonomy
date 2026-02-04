@@ -37,7 +37,7 @@ def generate_narration(stats, mission="safety"):
         if rocks > 5:
             narration.append("Navigating around rocks requires frequent steering corrections, consuming more power.")
         if landscape > 40:
-            narration.append("High percentage of flat landscape ($landscape}%) supports energy-efficient cruising.")
+            narration.append(f"High percentage of flat landscape ({landscape}%) supports energy-efficient cruising.")
 
     elif mission == "safety":
         if obstacles > 8:

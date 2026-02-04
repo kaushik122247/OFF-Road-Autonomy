@@ -41,7 +41,7 @@ base_id = selected_mask_file.split("_")[0]
 real_image_path = os.path.join(ROOT_DIR, "Offroad_Segmentation_testImages", "Color_Images", f"{base_id}.png")
 
 if os.path.exists(real_image_path):
-    st.sidebar.image(real_image_path, caption="Original Camera View", width='stretch')
+    st.sidebar.image(real_image_path, caption="Original Camera View", use_container_width=True)
 else:
     st.sidebar.warning(f"Real image not found at {real_image_path}")
 
@@ -109,11 +109,11 @@ col1, col2 = st.columns([3, 2])
 with col1:
     st.subheader("Segmentation Visualization")
     if color_mask is not None:
-        st.image(color_mask, width='stretch', caption=f"Scene: {selected_mask_file}")
+        st.image(color_mask, use_container_width=True, caption=f"Scene: {selected_mask_file}")
     else:
         # If no color mask, at least normalize the grayscale one for visibility
         normalized_mask = cv2.normalize(mask, None, 0, 255, cv2.NORM_MINMAX)
-        st.image(normalized_mask, width='stretch', caption="Normalized Mask (Raw IDs scaled)")
+        st.image(normalized_mask, use_container_width=True, caption="Normalized Mask (Raw IDs scaled)")
 
 with col2:
     st.subheader("Scene Analysis")

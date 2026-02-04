@@ -33,6 +33,7 @@ def save_image(img, filename):
     std = np.array([0.229, 0.224, 0.225])
     img = np.moveaxis(img, 0, -1)
     img = (img * std + mean) * 255
+    img = np.clip(img, 0, 255).astype(np.uint8)
     cv2.imwrite(filename, img[:, :, ::-1])
 
 
