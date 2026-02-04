@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV_SETUP/EDU/
+
+# Large Files / Model Weights
+*.pth
+*.h5
+*.weights
+
+# Datasets
+Offroad_Segmentation_Training_Dataset/
+Offroad_Segmentation_testImages/
+
+# Predictions and logs
+predictions/
+train_stats/
+mask_stats/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
